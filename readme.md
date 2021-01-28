@@ -8,6 +8,7 @@ roslaunch open_manipulator_gazebo world_moveit.launch
 roslaunch open_manipulator_moveit moveit_planning_execution.launch
 
 python ./moveit_go.py
+----
 note : 
   use the following API to plan our armor
 ----
