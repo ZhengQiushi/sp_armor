@@ -2,31 +2,38 @@
 
 ## 1.How to use
 
+```bash
 roslaunch open_manipulator_gazebo world_moveit.launch
-{don't forget to click the play button in gazebo!!!}
 
 roslaunch open_manipulator_moveit moveit_planning_execution.launch
 
 python ./moveit_go.py
-----
-note : 
-  use the following API to plan our armor
-----
-    rospy.loginfo( "Starting Pose 2")
-    group.set_position_target([0.2, -0.1, 0.05])
-    group.go()
-----
-  use the following API to control our gripper
-----
-    gripper_target_2 = [ -0.01, 0]
-    gripper_group.set_joint_value_target(gripper_target_2)
-    gripper_group.go()
+```
+
+**note : **
+
+1. don't forget to click the play button in gazebo after the first launch !!!
+
+2. use the following API to plan our armor
+
+```python
+rospy.loginfo( "Starting Pose 2")
+group.set_position_target([0.2, -0.1, 0.05])
+group.go()
+```
+​       use the following API to control our gripper
+
+```python
+gripper_target_2 = [ -0.01, 0]
+gripper_group.set_joint_value_target(gripper_target_2)
+gripper_group.go()
+```
 ----
 
 The detailed API of move_group is here : http://docs.ros.org/en/indigo/api/moveit_commander/html/classmoveit__commander_1_1move__group_1_1MoveGroupCommander-members.html
 
-The constraint info for gripper and motor in each joint is in [src/open_manipulator_moveit/config/open_manipulator.srdf]
-}
+The constraint info for gripper and motor in each joint is in `src/open_manipulator_moveit/config/open_manipulator.srdf`
+
 
 ## 2.following task
 
@@ -39,6 +46,6 @@ TODO：
 3.驱动电机
 4.添加相机模块，实物联调
 
-by truth 2021.0129 \n
+by truth 2021.0129 
 
 Have a happy new year!
