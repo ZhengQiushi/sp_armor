@@ -5,11 +5,6 @@
   <arg name="camera_namespace" default="camera"/>
 
   <group if="$(arg use_platform)">
-    <!--<include file="$(find realsense2_camera)/launch/rs_camera.launch">-->
-    <!--<include file="$(find realsense2_camera)/launch/rs_rgbd.launch">
-      <arg name="camera"                value="$(arg camera_namespace)"/>
-      <arg name="enable_pointcloud"     value="false" />
-    </include>-->
     <param name="robot_description"
       command="$(find xacro)/xacro --inorder '$(find open_manipulator_description)/urdf/open_manipulator_robot.urdf.xacro'"/>
     <node pkg="tf" type="static_transform_publisher" name="camera_frame_to_realsense_frame"
@@ -21,12 +16,6 @@
       command="$(find xacro)/xacro --inorder '$(find open_manipulator_find_object_2d)/urdf/open_manipulator_with_d435_robot.urdf.xacro'"/>
   </group>
 
-  <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher">
-    <rosparam param="source_list" subst_value="true">["joint_states"]</rosparam>
-  </node>
-
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
-
   <include file="$(find open_manipulator_find_object_2d)/launch/find_object.launch">
       <arg name="use_platform" value="$(arg use_platform)" />
   </include>
@@ -35,4 +24,17 @@
     <node pkg="rviz" type="rviz" name="rviz" required="true"
       args="-d $(find open_manipulator_find_object_2d)/rviz/find_object.rviz"/>
   </group>
+
+
+
+  <include file="$(find open_manipulator_moveit)/launch/move_group.launch">
+    <arg name="publish_monitored_planning_scene" value="true" />
+  </include>
+
+    <!-- We do not have a robot connected, so publish fake joint states -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="/use_gui" value="false"/> 
+    <rosparam param="/source_list">[/open_manipulator/joint_states]</rosparam>
+  </node>
+
 </launch>

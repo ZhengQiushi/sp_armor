@@ -19,6 +19,14 @@
   <xacro:include filename="$(find open_manipulator_find_object_2d)/urdf/d435.urdf.xacro" /> 
   <!--<xacro:include filename="$(find realsense2_description)/urdf/_d435.urdf.xacro" />-->
 
+
+
+  <!-- Import all Gazebo-customization elements, including Gazebo colors -->
+  <!-- <xacro:include filename="$(find open_manipulator_description)/urdf/open_manipulator.gazebo.xacro" /> -->
+
+
+
+
   <!-- World -->
   <link name="world"/>
 

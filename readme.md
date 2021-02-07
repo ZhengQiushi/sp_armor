@@ -2,10 +2,22 @@
 
 ## 1.How to use
 
+#### (1) open_manipulator without realsense
+
 ```bash
 roslaunch open_manipulator_gazebo world_moveit.launch
 
 roslaunch open_manipulator_moveit moveit_planning_execution.launch
+
+python ./moveit_go.py
+```
+
+#### (2) open_manipulator  with realsense
+
+```bash
+roslaunch open_manipulator_gazebo world_moveit_pick.launch
+
+roslaunch open_manipulator_find_object_2d object_detection.launch
 
 python ./moveit_go.py
 ```
@@ -42,7 +54,7 @@ The detailed API of move_group is here : http://docs.ros.org/en/indigo/api/movei
 
 TODO：
 
-1. 移植find_obj_2d
+1. 移植find_obj_2d (done!)
 2. 重新编写pick_and_place，用moveit的API 
 3. 驱动电机
 4. 添加相机模块，实物联调
