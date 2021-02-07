@@ -1,0 +1,2 @@
+open_manipulator:open_manipulator_description:open_manipulator_find_object_2d:open_manipulator_ikfast_plugin:open_manipulator_moveit:open_manipulator_simulations/open_manipulator_gazebo:open_manipulator_simulations/open_manipulator_simulations
+-DCATKIN_DEVEL_PREFIX=/home/sp/sp__ws/sp_armor/devel -DCMAKE_INSTALL_PREFIX=/home/sp/sp__ws/sp_armor/install -G Unix Makefiles

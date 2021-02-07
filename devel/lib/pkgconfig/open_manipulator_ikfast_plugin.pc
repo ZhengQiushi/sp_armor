@@ -1,0 +1,8 @@
+prefix=/home/sp/sp__ws/sp_armor/devel
+
+Name: open_manipulator_ikfast_plugin
+Description: Description of open_manipulator_ikfast_plugin
+Version: 0.0.1
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
