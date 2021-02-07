@@ -1,8 +1,0 @@
-prefix=/home/sp/sp__ws/sp_armor/devel
-
-Name: open_manipulator_find_object_2d
-Description: Description of open_manipulator_find_object_2d
-Version: 1.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: rospy std_msgs sensor_msgs open_manipulator_msgs tf gazebo_ros gazebo_ros_control controller_manager xacro urdf

@@ -1,8 +1,0 @@
-prefix=/home/sp/sp__ws/sp_armor/install
-
-Name: open_manipulator_moveit
-Description: Description of open_manipulator_moveit
-Version: 2.0.1
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
